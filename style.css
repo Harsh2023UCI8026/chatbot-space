@@ -1,0 +1,179 @@
+  /* General Styles */
+body {
+  font-family: 'Audiowide', cursive;
+  background-color: #121212;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+/* === Animated Gradient for Space Theme === */
+@keyframes galaxyGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating Chat Icon */
+#chatbot-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 65px;
+  height: 65px;
+  background: linear-gradient(135deg, #6f42c1, #ff61d2, #00cfff);
+  background-size: 300% 300%;
+  color: white;
+  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3), 0 0 40px rgba(136,0,255,0.4);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  animation: pulseGlow 2.5s infinite ease-in-out,
+             galaxyGradient 8s ease infinite;
+}
+
+#chatbot-icon:hover {
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 0 30px rgba(255,255,255,0.5), 0 0 50px rgba(255,0,255,0.6);
+}
+
+/* Glowing planet/star pulse */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255,255,255,0.4), 0 0 50px rgba(100, 0, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255,255,255,0.7), 0 0 70px rgba(255, 0, 200, 0.6);
+  }
+}
+
+/* Chatbot Container */
+#chatbot-container {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 350px;
+  height: 450px;
+  background-color: #1b1b2f;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: starryBackground 20s linear infinite;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,0.9), transparent),
+    radial-gradient(1px 1px at 80% 70%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1.5px 1.5px at 50% 50%, rgba(255,255,255,0.5), transparent);
+  background-size: 200% 200%;
+}
+
+@keyframes starryBackground {
+  0% { background-position: 0 0, 0 0, 0 0; }
+  100% { background-position: 100% 100%, 200% 200%, -100% -100%; }
+}
+
+/* Hide Chatbot Initially */
+.hidden {
+  display: none !important;
+}
+
+/* Chatbot Header */
+#chatbot-header {
+  background: linear-gradient(135deg, #8e44ad, #2980b9, #ff61d2);
+  background-size: 300% 300%;
+  color: white;
+  padding: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  animation: cometSlide 0.8s ease forwards, galaxyGradient 6s ease infinite;
+}
+
+/* Comet-like slide effect */
+@keyframes cometSlide {
+  0% { transform: translateX(100%); opacity: 0; }
+  50% { transform: translateX(-10%); opacity: 0.7; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+#close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Chatbot Body */
+#chatbot-body {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+/* Chatbot Messages */
+#chatbot-messages {
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 8px;
+  max-width: 85%;
+}
+
+.message.user {
+  background: linear-gradient(135deg, #6f42c1, #ff61d2);
+  color: white;
+  align-self: flex-end;
+}
+
+.message.bot {
+  background-color: #333;
+  color: white;
+  align-self: flex-start;
+}
+
+/* Input Section */
+#chatbot-input-container {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #444;
+  background-color: #2c2c2c;
+}
+
+#chatbot-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 10px;
+  background-color: #333;
+  color: white;
+}
+
+#send-btn {
+  margin-left: 10px;
+  padding: 10px 15px;
+  background: linear-gradient(135deg, #6f42c1, #00cfff, #ff61d2);
+  background-size: 200% 200%;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  animation: galaxyGradient 10s ease infinite;
+}
+
+#send-btn:hover {
+  transform: scale(1.05);
+}

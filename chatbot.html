@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AstroBot</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Space/Techy Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+
+</head>
+<body style="font-family: 'Orbitron', sans-serif;">
+  
+  <!-- Floating Chat Icon -->
+  <div id="chatbot-icon"><i class="fas fa-user-astronaut"></i></div>
+
+  <!-- Chatbot Container -->
+  <div id="chatbot-container" class="hidden">
+    
+    <!-- Header -->
+    <div id="chatbot-header">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <!-- Small Saturn SVG icon -->
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/>
+          <path d="M2 12c0-1 4-4 10-4s10 3 10 4-4 4-10 4S2 13 2 12z"/>
+        </svg>
+        <div>
+          <div style="font-size: 18px;">Nakshatra</div>
+          <div style="font-size: 11px; color: #ccc;">Maths ✕ Space ✕ AI</div>
+        </div>
+      </div>
+      <button id="close-btn" aria-label="Close">&times;</button>
+    </div>
+
+    <!-- Body -->
+    <div id="chatbot-body">
+      <div id="chatbot-messages"></div>
+    </div>
+
+    <!-- Input Section -->
+    <div id="chatbot-input-container">
+      <input 
+        type="text" 
+        id="chatbot-input" 
+        placeholder="Ask about space, maths or AI..."
+        aria-label="Chat input"
+      />
+      <button id="send-btn">Send</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
